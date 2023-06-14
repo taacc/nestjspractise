@@ -5,9 +5,21 @@ module.exports = {
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'jest', 'prettier', 'import', 'unused-imports'],
   extends: [
+    // airbnb规范
+    'airbnb-base',
+    // 兼容typescript的airbnb规范
+    'airbnb-typescript/base',
+    // typescript的eslint插件
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+
+    // 支持jest
+    'plugin:jest/recommended',
+    // 使用prettier格式化代码
+    'prettier',
+    // 整合typescript-eslint与prettier
     'plugin:prettier/recommended',
   ],
   root: true,
@@ -21,5 +33,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    'import/prefer-default-export': 'off',
+    'class-methods-use-this': 'off'
   },
 };
