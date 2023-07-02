@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { AppService } from './app.service';
-import { CreateUserDto } from './dto/CreateUserDto';
+import { CreateUserDto } from './modules/user/dto/CreateUserDto';
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) { }
